@@ -33,6 +33,41 @@ Para verificar la instalación de los drivers de la GPU, realiza lo siguiente:
 
 Deberías ver información de tu GPU y versión del driver
 
+## Instalación de CUDA Toolkit
+Para programar ConvNeXt + ViT necesitamos pytorch y la versión de CUDA compatible para ello es la 11.8:
+1. Ve a: https://developer.nvidia.com/cuda-11-8-0-download-archive
+2. Selecciona Windows → x86_64 → 11 → exe (local)
+3. Descarga e instala
+
+## Instalación de Pytorch con soporte GPU
+En la terminal, ejecuta:
+```pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118```
+
+## verifica que Pytorch detecte tu GPU
+1. En tu terminal escribe ```python```y dale enter
+2. Se abrirá la interfaz para programar en python
+3. Introduce el siguiente código:
+
+```
+python
+import torch
+
+print(f"PyTorch version: {torch.__version__}")
+print(f"CUDA available: {torch.cuda.is_available()}")
+print(f"CUDA version: {torch.version.cuda}")
+print(f"GPU name: {torch.cuda.get_device_name(0)}")
+print(f"GPU memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
+```
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -57,6 +57,7 @@ print(f"CUDA version: {torch.version.cuda}")
 print(f"GPU name: {torch.cuda.get_device_name(0)}")
 print(f"GPU memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
 ```
+Se espera que el código te muestre la existencia de una GPU
 
 
 
